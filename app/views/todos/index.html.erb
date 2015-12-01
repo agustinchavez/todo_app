@@ -1,0 +1,30 @@
+<title>Shared Todo App </title>
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <h1> Todo List </h1>
+        <hr>
+        <h3> List your todo items here: </h3>
+            <%= form_for Todo.new, remote: true do |f| %>
+              <div class="form-group">
+                <%= f.text_field :description, placeholder:
+                "what needs doing?" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.text_field :priority, placeholder: "priority level" %>
+              </div>
+
+              <div class="form-group">
+              <%= f.submit %>
+              </div>
+            <% end %>
+
+            <ul>
+              <%= render @todos %>
+            </ul>
+
+
+      </div>
+    </div>
+  </div>
